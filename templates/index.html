@@ -1,38 +1,35 @@
 <html>
+
 <head>
-<style>
-
-    body {
-        text-align: center;
-        margin-top: 50px;
-        font-size: 25px;
-        background-color: darkslategrey;
-
-    }
-
-    h1 {
-        color: skyblue;
-    }
-
-</style>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
 </head>
 
 <!--##NO predefine-->
+
 <body>
-    <h1>Advance Calculator!</h1>  <br>
-    <img width="20%" height="20%" src="{{url_for('static', filename='img.png') }} " />
+    <h1>Advance Calculator!</h1> <br>
+    <img class="img" src="{{url_for('static', filename='img.png') }} " />
+
+    <br>
+    <br>
+    
     <form method="POST">
-        <label >Enter expression</label><br><br>
-        <select class="is-focused is-large" name="operation" aria-label="operationDropdown">
+        <label>Enter expression</label><br><br>
+        <select class="select is-focused is-large" name="operation" aria-label="operationDropdown">
             <option>Choose operation</option>
             <option value="simplify">Simplify</option>
             <option value="factor">Factor</option>
         </select>
-    <input placeholder="Expression" name="text">
-    <input type="submit">
-</form>
+        <input class="input" placeholder="Expression" name="text">
+        <input type="submit">
+    </form>
 
 
-    <p>Your equation is {{equation}} = {{ result }}</p>
+    <p class="equation">Your equation is : {{equation}} = {{ result }}</p>
+
+    <footer>
+        <h5>Created By : Sharvil</h5>
+    </footer>
 </body>
+
 </html>
